@@ -13,7 +13,7 @@ const db = new sqlite3.Database('./database.db');
 
 // Define a route to fetch data
 app.get('/data', (req, res) => {
-  const query = 'SELECT * FROM your_table_name'; // Replace 'your_table_name' with your actual table name
+  const query = 'SELECT * FROM mytable';
 
   db.all(query, [], (err, rows) => {
     if (err) {
