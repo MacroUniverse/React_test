@@ -53,3 +53,8 @@ node server-unified.js
 这时候无需在 `fe` 运行之前的 `npm start`，只需直接在浏览器打开 `http://localhost:5515` 即可。
 由于现在只有一个端口了，也无需设置 CORS 了。
 此时 `fe` 文件夹里面根本不需要安装任何东西，可以把所有东西都删掉只留下 `build` 文件夹。
+
+
+注意 `fe/src` 中 `App.js` 和 `DataGridComponents.js` 并不是标准的 js 语法而是 React 特有的 `JSX`，用于方便页面布局。
+后缀名也可以用 `.jsx` 来具体声明。
+React 在 build 的时候会生成对应的标准 js 文件。
