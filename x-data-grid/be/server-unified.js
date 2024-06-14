@@ -24,9 +24,10 @@ app.get('/api/data', (req, res) => {
   });
 });
 
-// Catch-all handler to return the React app for any request that doesn't match an API route
+// Catch any request that doesn't match the React files or and API
+// e.g. http://localhost:5515/whatever
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../fe/build', 'index.html'));
 });
 
 // Start the server
