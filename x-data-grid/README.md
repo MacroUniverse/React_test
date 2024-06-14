@@ -2,18 +2,26 @@
 
 前后端分离，前端发起 http get 的 api 请求， 后端读取数据库，返回一个 json 文件。
 
-在 `x-data-grid` 文件夹中创建 React 应用（`fe` 文件夹）
+在 `x-data-grid` 中创建 React 应用
 ```bash
-# 相关的包安装在 x-data-grid/fe/node_modules
+# 前端文件夹 `fe`
 npx create-react-app fe
-# 前端需要的额外包（不要进入 fe，安装在 x-data-grid/node_modules)
+cd fe
 npm install @mui/material @emotion/react @emotion/styled @mui/x-data-grid axios
-# 后端需要的包（安装在 x-data-grid/node_modules)
+cd ../
+```
+编辑 `fe/src/App.js`，创建 `fe/src/DataGridComponent.js`。
+
+```bash
+# 后端文件夹 be
+# 用于数据库 api（端口 5515）
+mkdir be
+cd be
 npm install express sqlite3 cors
 ```
+创建 `be/server.js`。
 
-编辑 `fe/src/App.js` 和 `fe/src/DataGridComponent.js`。
-创建后端文件夹 `be` (backend) 文件夹，进入，创建 `server.js`。
+创建数据库 `data/database.db`
 
 现在就可以启动了
 ```bash

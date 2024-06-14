@@ -9,7 +9,7 @@ const PORT = 5515;
 app.use(cors());
 
 // Open the SQLite database
-const db = new sqlite3.Database('./database.db');
+const db = new sqlite3.Database('../data/database.db');
 
 // Define a route to fetch data
 app.get('/data', (req, res) => {
