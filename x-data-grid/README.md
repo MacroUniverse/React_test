@@ -33,4 +33,19 @@ npm start
 ```
 最后一个命令会自动打开浏览器，以及 React 页面。
 
-注意浏览器上打开的 url 是 `http://localhost:3000/`， 也就是说我们有两个 web server， 一个 React App 的， 一个提供数据库 api 返回 json 的。
+注意浏览器上打开的 url 是 `http://localhost:3000`， 也就是说我们有两个 web server， 一个 React App 的， 一个提供数据库 api 返回 json。
+
+为什么后端需要用 CORS？因为 api 用了一个不同的端口，所以和 React 页面是不同源的。
+
+在生产环境，一般会把 React 整个 minify，打包生成到 `build` 文件夹：
+```bash
+cd fe
+npm run build
+```
+然后修改 `be/server.js`，使其在支持 API 的同时还可以访问 build 文件夹中的静态文件，修改完后的文件见 `be/server-unified.js`
+```bash
+cd be
+node server-unified.js
+```
+这时候无需在 `fe` 运行之前的 `npm start`，只需直接在浏览器打开 `http://localhost:5515` 即可。
+由于现在只有一个端口了，也无需设置 CORS 了。

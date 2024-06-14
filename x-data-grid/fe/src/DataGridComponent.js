@@ -9,7 +9,7 @@ const DataGridComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5515/data');
+        const response = await axios.get('http://localhost:5515/api/data');
         setRows(response.data);
         setLoading(false);
       } catch (error) {
