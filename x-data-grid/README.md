@@ -31,4 +31,6 @@ node server.js
 cd fe
 npm start
 ```
-最后一个命令会自动打开浏览器，打开 `server.js` 指定的本地端口。
+最后一个命令会自动打开浏览器，以及 React 页面。
+
+注意浏览器上打开的 url 是 `http://localhost:3000/`， 也就是说我们有两个 web server， 一个 React App 的， 一个提供数据库 api 返回 json 的。
